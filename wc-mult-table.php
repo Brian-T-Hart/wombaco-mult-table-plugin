@@ -33,8 +33,12 @@ function wc_mult_table_shortcode( $atts = [], $content = null ) {
     //     ), $atts
     // );
 
+	$wcmt_show_title = get_option('wcmt_settings_select_field');
+	$wcmt_title = $wcmt_show_title == "yes" ? '<h2>' . get_option('wcmt_settings_input_field') . '</h2>' : '';
+
 	$content = '
 	<div id="wcmt-main-container">
+		' . $wcmt_title . '
 
 		<div class="wcmt-message-container text-center" id="wcmt-message-container">
 			<p class="wcmt-message" id="wcmt-review">
